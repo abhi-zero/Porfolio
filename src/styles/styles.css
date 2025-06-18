@@ -1,39 +1,42 @@
 @font-face {
-    font-display: swap;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-regular.woff2') format('woff2');
-  }
-  @font-face {
-    font-display: swap;
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 400;
-    src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-italic.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-display: swap;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-500.woff2') format('woff2');
-  }
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-500.woff2') format('woff2');
+}
 
 
-:root{
+:root {
 
-    /*Colors */
-    --darkGray-color :  hsl(240, 4%, 16%);
-    --vividBlue-color : hsl(210, 81%, 40%);
-}  
+  /*Colors */
+  --darkGray-color: hsl(240, 4%, 16%);
+  --vividBlue-color: hsl(210, 81%, 40%);
+  --teal-color: hsl(180, 95%, 44%);
+}
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Remove default margin */
@@ -77,9 +80,10 @@ body {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
-a{
-    color: white;
-    text-decoration: none;
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -102,7 +106,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -113,58 +117,279 @@ select {
   }
 }
 
-button{
-   height: 40px;
-   padding: 7px 20px;
-   border:none;
-   border-radius: 10px;
+button {
+  height: 40px;
+  padding: 7px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-header{
-    /* height: 80px; */
-    /* background-color:hsl(from  var(--darkGray-color) h s l / .5); */
-    background-color: aqua;
-    backdrop-filter: blur(10px);
-    max-width: 1200px;
-    position: relative;
-    margin: 30px auto ;
-    border-radius: 10px;
+.primary-cta{
+  transition: all .3s ease-in;
 }
 
-header nav{
+
+.primary-cta:hover {
+  color: white;
+  border-color: var(--vividBlue-color) ;
+  background-color: var(--vividBlue-color);
+}
+
+.secondary-cta{
+  transition: all .3s ease-in;
+}
+
+.secondary-cta:hover{
+  color: white;
+  background-color: var(--darkGray-color);
+}
+
+header {
+  padding: 30px 20px;
+  position: relative;
+
+}
+
+header nav {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px 20px;
+  border-radius: 10px;
+  height: 70px;
+  background-color: hsl(from white h s l / .4);
+  backdrop-filter: blur(10px);
+}
+
+header nav .nav-logo {
+  position: relative;
+  width: 22%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+header nav .nav-logo h1 {
+  transition: all .3s ease-in-out;
+}
+
+header nav .nav-logo:hover h1 {
+  transform: translateY(-100%);
+}
+
+header nav .nav-logo h1::before {
+  content: "ABHINANDAN BHATTI";
+  position: absolute;
+  transform: translateY(100%);
+  font-size: 24px;
+  font-weight: 700;
+  text-wrap: unset;
+  color: var(--darkGray-color);
+
+}
+
+header nav .nav-part2 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+header nav .nav-part2 ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header nav .nav-part2 ul li {
+  padding: 5px 16px;
+  overflow: hidden;
+}
+
+header nav .nav-part2 ul li a {
+  position: relative;
+  padding: 2px 4px;
+}
+
+
+header nav .nav-part2 ul li a::after {
+  content: " ";
+  background-color: var(--darkGray-color);
+  position: absolute;
+  bottom: -200%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all .3s ease-in;
+  border-radius: 5px;
+}
+
+header nav .nav-part2 ul li:hover a::after {
+  bottom: 0;
+}
+
+
+
+.hero-section{
+  height: calc(100vh - 70px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .hero-content{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.hero-section .hero-content .hero-textcontent{
+ 
+  width: 100%;
+  text-align: center;
+}
+
+.hero-section .hero-content .hero-textcontent .subheading{
+ font-size: 14px;
+}
+
+.hero-section .hero-content .hero-textcontent .heading{
+  font-size: clamp(2.85rem, 0.7857rem + 3.5714vw, 4rem);
+  /* line-height: 1.2; */
+  width: 100%;
+}
+
+.hero-section .hero-content .hero-textcontent .heading>span{
+  color: var(--darkGray-color);
+  background-color: white;
+  padding: 0 5px;
+  border-radius: 5px;
+  width: 100%;
+  text-transform: uppercase;
+}
+.hero-section .hero-content .hero-textcontent .description{
+  font-size: clamp(1rem, 0.7714rem + 0.4762vw, 1.2rem);
+}
+
+
+.hero-section .hero-content .hero-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+canvas{
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+
+
+
+
+@media(max-width : 768px) {
+  header {
+    padding: 0;
+    height: 60px;
+    overflow-x: hidden;
+  }
+
+  header nav {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    height: 60px;
+    padding: 10px 20px;
+  }
+
+  header nav .nav-logo {
+    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center ;
-    position: sticky;
-    top: 30px;
-    padding: 5px 20px;
-}
+  }
 
-header nav .nav-part2{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-header nav .nav-part2 ul{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-header nav .nav-part2 ul li{
-    padding: 7px 20px;
-    overflow: hidden;
-}
-
-header nav .nav-part2 ul li a::after{
-    content: " ";
-    background-color: var(--vividBlue-color);
+  #menu-button, #close-button{
+    display: block;
+    font-size: 1.25rem;
+  }
+ 
+  #close-button{
     position: absolute;
-    top: 60%;
-    /* left: 0%; */
-    width: 10%;
-    padding: 1px 2px;
+    right: 10%;
+    top: 20%;
+  }
+
+  header nav .nav-logo h1 {
+    transition: none;
+  }
+
+  header nav .nav-logo:hover h1 {
+    transform: none;
+  }
+
+  header nav .nav-logo h1::before {
+    display: none;
+  }
+
+  header nav .nav-part2 {
+    transform: translateX(110%);
+    background-color: hsl(from white h s l / .4);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header nav .nav-part2 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 2rem;
+  }
+
+  .hero-section .hero-content{
+    padding-inline: 20px;
+  }
+
+  .hero-section .hero-content .hero-textcontent{
+    text-align: left;
+  }
+  .hero-section .hero-content .hero-textcontent .heading{
+    line-height: 1.2;
+    margin-block: 20px;
+    width: 100%;
+  }
+  .hero-section .hero-content .hero-textcontent .heading>span{
+    background-color: var(--darkGray-color);
+    color: var(--teal-color);
+  }
+
+  .hero-section .hero-content .hero-buttons{
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
 }
 
+
+
+#page2 {
+  height: 100vh;
+  background-color: aqua;
+}
+
+#page3 {
+  height: 100vh;
+  background-color: rgb(19, 66, 66);
+}
