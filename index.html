@@ -1,27 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Abhi.me</title>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <nav id="navbar">
-            <div class="nav-logo">
-                <h1>ABHI</h1>
-            </div>
-            <div class="nav-part2">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Me</a></li>
-                    <li><a href="">Projects</a></li>
-                </ul>
-                <button>Let's Connect</button>
-            </div>
-        </nav>
+      <nav id="navbar">
+        <div class="nav-logo">
+          <h1>ABHI</h1>
+          <button id="menu-button" hidden>
+            <i class="ri-menu-3-fill"></i>
+          </button>
+        </div>
+        <div class="nav-part2">
+          <button id="close-button" hidden>
+            <i class="ri-close-circle-fill"></i>
+          </button>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Me</a></li>
+            <li><a href="">Projects</a></li>
+          </ul>
+          <button class="letconnect primary-cta">Let's Connect</button>
+        </div>
+      </nav>
     </header>
-    
-</body>
+    <main>
+      <section id="page1" class="hero-section">
+          <canvas></canvas>
+       <div class="hero-content">
+        <div class="hero-textcontent">
+            <p class="subheading">
+              A Front-End Developer with a Passion for Crafting Seamless User
+              Experiences.
+            </p>
+            <h1 class="heading">Hi, I'm <span>Abhinandan Bhatti</span></h1>
+            <p class="description">
+              <em>I specialize in building responsive, accessible websites using
+                HTML, CSS and JavaScript.</em >
+            </p>
+          </div>
+          <div class="hero-buttons">
+              <button class="primary-cta">View My Work</button>
+              <button class="secondary-cta">Contact Me</button>
+          </div>
+       </div>
+      </section>
+      <div id="page2" class="about-section">
+        <canvas id="page2-canvas">
+        </canvas>
+        
+      </div>
+      <div id="page3"></div>
+    </main>
+     
+    <script type="module"  src="./src/scripts/three.js"></script>
+  </body>
 </html>
