@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/helper-classes.css">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -28,13 +29,13 @@
             <li><a href="">About Me</a></li>
             <li><a href="">Projects</a></li>
           </ul>
-          <button class="letconnect primary-cta">Let's Connect</button>
+          <button class="button letconnect primary-cta">Let's Connect</button>
         </div>
       </nav>
     </header>
     <main>
       <section id="page1" class="hero-section">
-          <canvas></canvas>
+          <canvas id="scene1"></canvas>
        <div class="hero-content">
         <div class="hero-textcontent">
             <p class="subheading">
@@ -48,19 +49,68 @@
             </p>
           </div>
           <div class="hero-buttons">
-              <button class="primary-cta">View My Work</button>
-              <button class="secondary-cta">Contact Me</button>
+              <button class="button primary-cta">View My Work</button>
+              <button class="button secondary-cta">Contact Me</button>
           </div>
        </div>
       </section>
       <div id="page2" class="about-section">
-        <canvas id="page2-canvas">
-        </canvas>
-        
+       
+        <div class="about-content">
+          <div class="heading-secction">
+           <h1 class="heading">
+            About Me
+           </h1>
+          </div>
+          <div class="canvas-content">
+           <div class="canvas-div">
+            <canvas id="scene2">
+            </canvas>
+            <h4>This isn't me!</h4>
+           </div>
+            <div class="about-textcontent">
+              <h4 class="aboutme">
+                <em>Hi, I'm Abhinandan Bhatti, a front-end developer with a <span class="lang degr">BCA</span> degree and a passion for building responsive, accessible websites. My current toolkit includes <span class="lang html">HTML</span>, <span class="lang css">CSS</span>, <span class="lang js">JavaScript</span>, and <span class="lang git">Git</span>, and I'm learning <span class="lang threejs">ThreeJS</span> to enhance my web design skills. I'm always excited to tackle new challenges and grow as a developer. When I'm not coding, I enjoy playing games or watching sci-fi and comedy movies.
+                </em>
+                </h4>
+              <div class="skill-section">
+                <h3>Skills</h3>
+                <div class="skill-imgs">
+                  <img src="./src/assets/images/skill_images/html5.svg" alt="HTML Logo">
+                  <img src="./src/assets/images/skill_images/css3.svg" alt="CSS Logo">
+                  <img src="./src/assets/images/skill_images/javascript.svg" alt="JavaScript Logo">
+                </div>
+              </div>
+              <p class="quote"><quote><em>"Currently mastering the art of not breaking code that already works"</em></p>
+            </div>
+          </div>
+          
+        </div>
       </div>
-      <div id="page3"></div>
+      <div id="page3" class="projects-section">
+        <div class="projects-content-section">
+          <div class="heading-section">
+            <h1 class="heading">My Work</h1>
+            <h3 class="description">Here are a few projects I've built.</h3>
+          </div>
+          <div class="canvas" hidden>
+            <canvas id="scene3"></canvas>
+          </div>
+          <div class="projects">
+            <div class="projects-lists">
+              <ul id="projectList">
+                <!-- Project list items will be dynamically generated and inserted here by load_projects.js -->
+              </ul>
+            </div>
+            <div class="projects-content">
+             <!-- Project cards will be dynamically rendered here when a project is selected from the list -->
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
      
     <script type="module"  src="./src/scripts/three.js"></script>
+    <script type="module" src="./src/scripts/load_projects.js"></script>
   </body>
 </html>
