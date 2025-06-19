@@ -28,8 +28,11 @@
   /*Colors */
   --darkGray-color: hsl(240, 4%, 16%);
   --vividBlue-color: hsl(210, 81%, 40%);
-  --teal-color: hsl(180, 95%, 44%);
+  --teal-color: hsl(180, 89%, 22%);
+
+  --gradient-color : hsl(180, 100%, 25%);
 }
+
 
 /* Box sizing rules */
 *,
@@ -117,33 +120,6 @@ select {
   }
 }
 
-button {
-  height: 40px;
-  padding: 7px 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.primary-cta{
-  transition: all .3s ease-in;
-}
-
-
-.primary-cta:hover {
-  color: white;
-  border-color: var(--vividBlue-color) ;
-  background-color: var(--vividBlue-color);
-}
-
-.secondary-cta{
-  transition: all .3s ease-in;
-}
-
-.secondary-cta:hover{
-  color: white;
-  background-color: var(--darkGray-color);
-}
 
 header {
   padding: 30px 20px;
@@ -233,13 +209,13 @@ header nav .nav-part2 ul li:hover a::after {
 
 
 
-.hero-section{
+.hero-section {
   height: calc(100vh - 70px);
   position: relative;
   overflow: hidden;
 }
 
-.hero-section .hero-content{
+.hero-section .hero-content {
   position: absolute;
   top: 45%;
   left: 50%;
@@ -247,23 +223,23 @@ header nav .nav-part2 ul li:hover a::after {
   width: 100%;
 }
 
-.hero-section .hero-content .hero-textcontent{
- 
+.hero-section .hero-content .hero-textcontent {
+
   width: 100%;
   text-align: center;
 }
 
-.hero-section .hero-content .hero-textcontent .subheading{
- font-size: 14px;
+.hero-section .hero-content .hero-textcontent .subheading {
+  font-size: 14px;
 }
 
-.hero-section .hero-content .hero-textcontent .heading{
+.heading {
   font-size: clamp(2.85rem, 0.7857rem + 3.5714vw, 4rem);
   /* line-height: 1.2; */
   width: 100%;
 }
 
-.hero-section .hero-content .hero-textcontent .heading>span{
+.hero-section .hero-content .hero-textcontent .heading>span {
   color: var(--darkGray-color);
   background-color: white;
   padding: 0 5px;
@@ -271,26 +247,293 @@ header nav .nav-part2 ul li:hover a::after {
   width: 100%;
   text-transform: uppercase;
 }
-.hero-section .hero-content .hero-textcontent .description{
+
+.hero-section .hero-content .hero-textcontent .description {
   font-size: clamp(1rem, 0.7714rem + 0.4762vw, 1.2rem);
 }
 
 
-.hero-section .hero-content .hero-buttons{
+.hero-section .hero-content .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 30px;
   margin: 40px 0;
 }
 
-canvas{
+canvas {
   height: 100%;
   width: 100%;
   left: 0;
+  background-color: black;
+}
+
+
+/* #page2 {
+  height: 100vh;
+} */
+
+.about-section {
+  position: relative;
+  margin-inline: 30px;
+}
+
+.about-section .about-content .canvas-content {
+  display: grid;
+  grid-template-columns: 400px 2fr;
+  gap: 30px;
+  /* background-color: aqua; */
+}
+
+
+.about-textcontent {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  gap: 20px;
+  margin-block: 20px;
+}
+
+.about-content .aboutme {
+  font-size: clamp(1.125rem, 0.8409rem + 0.4545vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.canvas-div {
+  height: 350px;
+  width: 100%;
+}
+
+.canvas-div h4 {
+  font-weight: 500;
+  text-align: center;
+
+}
+
+.skill-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-section h3 {
+  font-weight: 500;
+  background-color: var(--vividBlue-color);
+  width: 100px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: var(--darkGray-color);
+}
+
+.skill-section .skill-imgs {
+  display: flex;
+  gap: 20px;
+  margin-block: 10px;
+}
+
+.skill-section .skill-imgs img {
+  width: 40px;
+  height: 40px;
+}
+
+.quote {
+  font-size: clamp(1rem, 0.5455rem + 0.7273vw, 1.2rem);
+  letter-spacing: 1px;
+}
+
+.projects-section {
+  margin: 30px;
+  height: 100vh;
+}
+
+.projects-section .projects-content-section .heading-section .description {
+  font-weight: 500;
+  background-color: var(--teal-color);
+  width: fit-content;
+  padding: 0 4px;
+  border-radius: 5px;
+}
+
+.projects {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+}
+
+.project>img{
+  filter:blur(3px)
+  
+}
+
+.projects .projects-lists {
+  /* background-color: var(--vividBlue-color); */
+  padding: 40px;
+}
+
+.projects .projects-lists ul li{
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+}
+.projects .projects-lists ul li h4 {
+  font-size: 1.25rem;
+  line-height: 2;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.projects .projects-lists ul li h4::after {
+  content: " ";
+  background-color: var(--vividBlue-color);
+  position: absolute;
+  top: -150%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all .3s ease-in;
+  border-radius: 5px;
+}
+.projects .projects-lists ul li:hover h4::after {
+  top: 0%;
+}
+
+.projects-content{
+  position: relative;
+}
+
+.projects-content .project{
+  position: absolute;
+  
+}
+
+
+.projects-content .project .project-textcontent{
+  position: absolute;
+  bottom: -1%;
+  left: -.5%;
+  right: -.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.project-textcontent .links{
+display: flex;
+gap: 20px;
+
 }
 
 
 
+.project-textcontent h2{
+  font-size: 1.55rem;
+  width: fit-content;
+}
+
+.project-textcontent p{
+  font-size: 1.2rem;
+  width: fit-content;
+}
+
+.project-textcontent .project-techs{
+  display: flex;
+  gap: 20px;
+}
+
+.project-techs img {
+  width: 40px;
+  width: 40px;
+}
+
+
+
+
+
+
+
+@media (max-width : 1000px) {
+
+  .about-section .about-content .canvas-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 30px;
+    /* background-color: aqua; */
+  }
+
+
+  .about-textcontent {
+    display: grid;
+    grid-template-rows: 2fr auto 1fr;
+
+    gap: 20px;
+    margin-block: 20px;
+  }
+
+  .about-content .aboutme {
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .canvas-div {
+    height: auto;
+    width: 100%;
+    position: relative;
+    max-height: 500px;
+    /* Optional: Limit the height for scene 2 */
+    overflow: hidden;
+  }
+
+  .canvas-div canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+
+  .canvas-div h4 {
+    font-weight: 500;
+    text-align: center;
+
+  }
+
+  .skill-section {
+    justify-self: center;
+
+  }
+
+  .skill-section h3 {
+    font-weight: 500;
+    background-color: var(--vividBlue-color);
+    width: 100px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--darkGray-color);
+    margin: 0 auto;
+  }
+
+  .skill-section .skill-imgs {
+    display: flex;
+    gap: 20px;
+    margin-block: 10px;
+  }
+
+  .skill-section .skill-imgs img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .quote {
+    text-align: center;
+    font-size: clamp(1rem, 0.7714rem + 0.4762vw, 1.2rem);
+    letter-spacing: 1px;
+  }
+}
 
 
 @media(max-width : 768px) {
@@ -314,12 +557,13 @@ canvas{
     justify-content: space-between;
   }
 
-  #menu-button, #close-button{
+  #menu-button,
+  #close-button {
     display: block;
     font-size: 1.25rem;
   }
- 
-  #close-button{
+
+  #close-button {
     position: absolute;
     right: 10%;
     top: 20%;
@@ -356,40 +600,30 @@ canvas{
     font-size: 2rem;
   }
 
-  .hero-section .hero-content{
+  .hero-section .hero-content {
     padding-inline: 20px;
   }
 
-  .hero-section .hero-content .hero-textcontent{
+  .hero-section .hero-content .hero-textcontent {
     text-align: left;
   }
-  .hero-section .hero-content .hero-textcontent .heading{
+
+  .hero-section .hero-content .hero-textcontent .heading {
     line-height: 1.2;
     margin-block: 20px;
     width: 100%;
   }
-  .hero-section .hero-content .hero-textcontent .heading>span{
+
+  .hero-section .hero-content .hero-textcontent .heading>span {
     background-color: var(--darkGray-color);
     color: var(--teal-color);
   }
 
-  .hero-section .hero-content .hero-buttons{
+  .hero-section .hero-content .hero-buttons {
     display: flex;
     justify-content: left;
     gap: 30px;
     margin: 40px 0;
   }
 
-}
-
-
-
-#page2 {
-  height: 100vh;
-  background-color: aqua;
-}
-
-#page3 {
-  height: 100vh;
-  background-color: rgb(19, 66, 66);
 }
