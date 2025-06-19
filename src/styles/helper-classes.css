@@ -1,0 +1,88 @@
+
+.lang{
+    padding:0 4px ;
+    border-radius: 5px;
+  }
+  .html{
+    background-color: rgb(229, 101, 3);
+    color: var(--darkGray-color);
+   
+  }
+  
+  .css{
+    background-color: rgb(145, 55, 228);
+  }
+  
+  .js{
+    background-color: yellow;
+    color: var(--darkGray-color);
+  }
+  
+  .git{
+    background-color: orangered;
+    color: var(--darkGray-color);
+  }
+  
+  .threejs{
+    background-color: aliceblue;
+    color: var(--darkGray-color);
+  }
+  
+  .degr{
+    background-color: var(--vividBlue-color);
+    color: var(--darkGray-color);
+  }
+  
+
+  /* button */
+  
+.button {
+    height: 40px;
+    padding: 7px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .primary-cta{
+    background-color: white;
+    color: var(--darkGray-color);
+    transition: all .3s ease-in;
+  }
+  
+  
+  .primary-cta:hover {
+    color: white;
+    border-color: var(--vividBlue-color) ;
+    background-color: var(--vividBlue-color);
+    box-shadow: 0px 4px 10px black;
+  }
+  
+  .secondary-cta{
+    transition: all .3s ease-in;
+    color: white;
+    background-color: transparent;
+  }
+  
+  .secondary-cta:hover{
+    color: white;
+    border-color: var(--vividBlue-color) ;
+    background-color: var(--vividBlue-color);
+    box-shadow: 0px 4px 10px black;
+
+  }
+
+  .bg{
+   
+
+    background: linear-gradient(transparent,
+    hsl(from var(--gradient-color) h s l / .5)10%,
+    hsl(from var(--gradient-color) h s l / .9));
+     margin: 0;
+    border-radius: 5px;
+  }
+
+  .active{
+    background-color: var(--teal-color);
+    border-radius: 5px;
+  }
